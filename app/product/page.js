@@ -5,6 +5,7 @@ export default function ProductPage(props) {
     const {searchParams} = props
     const {price_id} = props
     const product = useCart(state => state.product)
+    const addItemToCart = useCart(state => state.addItemToCart)
     const {cost, productInfo, name, description} = product
 
     console.log(product)
@@ -12,6 +13,14 @@ export default function ProductPage(props) {
 
     if(!product?.name) { //upon reloading product page, send user to homepage
         window.location.href = '/'
+    }
+
+    function handleAddToCart() {
+        const newItem = {
+            quantity: 1,
+            price_id: price_id
+        }
+        addItemToCart({newItem})
     }
 
     return (
@@ -27,7 +36,7 @@ export default function ProductPage(props) {
                         <p className="md:text-base">${cost/100}</p>
                     </div>
                     <p className="text-sm flex-1">{description}</p>
-                    <button className="bg-slate-700 text-white
+                    <button onClick={handleAddToCart} className="bg-slate-700 text-white
                     hover:bg-slate-500 cursor-pointer ml-auto px-4 py-2">Add to Cart</button>
                 </div>
             </div>
