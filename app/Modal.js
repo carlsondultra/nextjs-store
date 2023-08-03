@@ -4,6 +4,7 @@ import ReactDom from 'react-dom'
 import useCart from './(store)/store'
 export default function Modal() {
     const closeModal = useCart(state => state.setOpenModal)
+    const cartItems = useCart(state => state.cart)
 
 
     const [domReady, setDomReady] = React.useState(false)
@@ -23,6 +24,19 @@ export default function Modal() {
                     fa-xmark"></i>
                     <div className='absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] 
                     bg-slate-300 w-2/3'></div>
+                </div>
+                <div>
+                    {cartItems.length === 0 ? (
+                        <p>Cart is Empty!</p>
+                    ) : (
+                        <>
+                            {cartItems.map((cartItem, itemIndex) => {
+                                return (
+                                    <div key={itemIndex}>{cartItem.name}</div>
+                                )
+                            })}
+                        </>
+                    )}
                 </div>
             </div>
         </div>, 
