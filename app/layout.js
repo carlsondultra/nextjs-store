@@ -29,6 +29,7 @@ export default function RootLayout({ children }) {
             md:text-4xl"></i>
           </Link>
         </footer>
+        <div id="portal"></div>
       </body>
     </html>
   )
