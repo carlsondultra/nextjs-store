@@ -8,8 +8,8 @@ export default function ProductPage(props) {
     const addItemToCart = useCart(state => state.addItemToCart)
     const {cost, productInfo, name, description} = product
 
-    console.log(product)
-    console.log(searchParams)
+    // console.log(product)
+    // console.log(searchParams)
 
     if(!product?.name) { //upon reloading product page, send user to homepage
         window.location.href = '/'

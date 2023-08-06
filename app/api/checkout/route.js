@@ -24,8 +24,8 @@ export async function POST(request) {
         })
         return NextResponse.json({session})
     } catch (err) {
-        console.log('broken')
-        console.log(err)
+        // console.log('broken')
+        // console.log(err)
         return new Response('Error', {
             status:405,
         });
