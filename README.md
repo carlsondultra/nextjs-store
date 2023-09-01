@@ -2,7 +2,7 @@
 Get started by doing the following: 
 ```
 git clone https://github.com/carlsondultra/nextjs-store.git
-cd nextjs13-store
+cd nextjs-store
 npm install
 npm run dev
 ```
